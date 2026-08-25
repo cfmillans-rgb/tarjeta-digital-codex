@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- 10. SEO y vista previa social -->
+  <title>María Soto — Abogada</title>
+  <meta name="description" content="Ayudo a trabajadores a defender sus derechos laborales.">
+  <meta property="og:title" content="María Soto — Abogada">
+  <meta property="og:description" content="Ayudo a trabajadores a defender sus derechos laborales.">
+  <meta property="og:url" content="https://mariasoto.cl">
+  <!-- Fallback de imagen en caso de no tener foto -->
+  <meta property="og:image" content="https://mariasoto.cl/assets/og-image.jpg">
+
+  <style>
+    /* 9. Accesibilidad y responsive (Mobile-first) */
+    :root {
+      --bg-color: #f4f4f5;
+      --card-bg: #ffffff;
+      --text-main: #111827;
+      --text-muted: #6b7280;
+      --btn-bg: #ffffff;
+      --btn-border: #e5e7eb;
+      --btn-text: #374151;
+      --primary: #10b981; /* WhatsApp verde base */
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    /* Contenedor principal centrado, sin layout alternativo */
+    .card-container {
+      width: 100%;
+      max-width: 390px;
+      background-color: var(--card-bg);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 24px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+
+    /* 1. Identidad */
+    .avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background-color: #e5e7eb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+      font-weight: 600;
+      color: #9ca3af;
+      margin-bottom: 24px;
+      overflow: hidden;
+    }
+
+    .name {
+      margin: 0 0 4px 0;
+      font-size: 24px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .role {
+      margin: 0 0 16px 0;
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    /* 2. Descripción */
+    .description {
+      margin: 0 0 32px 0;
+      font-size: 15px;
+      line-height: 1.5;
+      text-align: center;
+      max-width: 320px;
+    }
+
+    /* 3. Acciones */
+    .buttons-container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 44px; /* Área táctil mínima */
+      padding: 12px 16px;
+      background-color: var(--btn-bg);
+      color: var(--btn-text);
+      border: 1px solid var(--btn-border);
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .btn:hover, .btn:focus {
+      background-color: #f9fafb;
+      outline: none;
+      border-color: #d1d5db;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+    }
+
+    .btn-primary:hover, .btn-primary:focus {
+      background-color: #059669;
+    }
+
+    hr {
+      width: 100%;
+      border: none;
+      border-top: 1px solid var(--btn-border);
+      margin: 0 0 24px 0;
+    }
+
+    /* 5. Pie */
+    .footer {
+      margin-top: auto;
+      padding-top: 24px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .footer a {
+      color: var(--text-muted);
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card-container">
+    
+    <!-- 1. Identidad -->
+    <!-- Si no hay foto, usar iniciales -->
+    <div class="avatar" aria-label="Iniciales de María Soto">MS</div>
+    <h1 class="name">María Soto</h1>
+    <h2 class="role">Abogada especialista en derecho laboral</h2>
+
+    <!-- 2. Descripción -->
+    <p class="description">Ayudo a trabajadores a defender sus derechos laborales.</p>
+
+    <!-- 3. Acciones (Máximo 6 botones según la regla) -->
+    <div class="buttons-container">
+      <!-- WhatsApp siempre primero (codificado correctamente) -->
+      <a href="https://wa.me/56912345678?text=Hola%2C%20vi%20tu%20tarjeta..." class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+        WhatsApp
+      </a>
+      
+      <!-- Instagram -->
+      <a href="https://instagram.com/mariasoto" class="btn" target="_blank" rel="noopener noreferrer">
+        Instagram
+      </a>
+      
+      <!-- Email -->
+      <a href="mailto:contacto@mariasoto.cl" class="btn">
+        Correo
+      </a>
+    </div>
+
+    <hr>
+
+    <!-- 4. Compartir y Guardar Contacto -->
+    <div class="buttons-container">
+      <button class="btn" id="btn-share">Compartir esta tarjeta</button>
+      <button class="btn" id="btn-vcf">Guardar contacto</button>
+    </div>
+
+    <!-- 5. Pie -->
+    <div class="footer">
+      Hecho por <a href="https://digitalizalab.cl" target="_blank" rel="noopener noreferrer">Digitaliza Lab</a>
+    </div>
+
+  </div>
+
+  <!-- Scripts funcionales -->
+  <script>
+    // Web Share API con Fallback a copiar enlace
+    document.getElementById('btn-share').addEventListener('click', async () => {
+      const shareData = {
+        title: 'María Soto — Abogada',
+        text: 'Ayudo a trabajadores a defender sus derechos laborales.',
+        url: 'https://mariasoto.cl'
+      };
+
+      try {
+        if (navigator.share) {
+          await navigator.share(shareData);
+        } else {
+          // Fallback a clipboard
+          await navigator.clipboard.writeText(shareData.url);
+          alert('¡Enlace copiado al portapapeles!');
+        }
+      } catch (err) {
+        console.error('Error al compartir:', err);
+      }
+    });
+
+    // Generar y descargar VCF (Guardar Contacto)
+    document.getElementById('btn-vcf').addEventListener('click', () => {
+      const vcard = `BEGIN:VCARD
+VERSION:3.0
+FN:María Soto
+TITLE:Abogada especialista en derecho laboral
+TEL;TYPE=WORK,VOICE:+56912345678
+EMAIL:contacto@mariasoto.cl
+URL:https://mariasoto.cl
+END:VCARD`;
+
+      const blob = new Blob([vcard], { type: 'text/vcard' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'maria-soto.vcf';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    });
+  </script>
+</body>
+</html>
