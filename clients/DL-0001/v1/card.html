@@ -4,93 +4,159 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <!-- 10. SEO y vista previa social -->
-  <title>María Soto — Abogada</title>
+  <!-- SEO & Social Preview (Premium Optimization) -->
+  <title>María Soto — Abogada Especialista</title>
   <meta name="description" content="Ayudo a trabajadores a defender sus derechos laborales.">
-  <meta property="og:title" content="María Soto — Abogada">
+  <link rel="canonical" href="https://mariasoto.cl">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="María Soto — Abogada Especialista">
   <meta property="og:description" content="Ayudo a trabajadores a defender sus derechos laborales.">
   <meta property="og:url" content="https://mariasoto.cl">
-  <!-- Fallback de imagen en caso de no tener foto -->
+  <meta property="og:type" content="website">
   <meta property="og:image" content="https://mariasoto.cl/assets/og-image.jpg">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="María Soto — Abogada Especialista">
+  <meta name="twitter:description" content="Ayudo a trabajadores a defender sus derechos laborales.">
+  <meta name="twitter:image" content="https://mariasoto.cl/assets/og-image.jpg">
 
   <style>
-    /* 9. Accesibilidad y responsive (Mobile-first) */
+    /* Variables - Paleta Premium y Elegante */
     :root {
-      --bg-color: #f4f4f5;
-      --card-bg: #ffffff;
-      --text-main: #111827;
-      --text-muted: #6b7280;
-      --btn-bg: #ffffff;
-      --btn-border: #e5e7eb;
-      --btn-text: #374151;
-      --primary: #10b981; /* WhatsApp verde base */
+      --accent: #059669; /* Verde esmeralda elegante (WhatsApp/Accent) */
+      --accent-hover: #047857;
+      --accent-light: #ecfdf5;
+      --bg-page: #f3f4f6; /* Tono muy suave para desktop */
+      --bg-card: #ffffff;
+      --text-main: #111827; /* Casi negro para máximo contraste */
+      --text-muted: #4b5563; /* Gris sofisticado para descripciones */
+      --border-color: #e5e7eb;
+      
+      --radius-card: 24px;
+      --radius-btn: 14px;
+      --transition-base: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Respeto por preferencias de movimiento */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
     }
 
     * {
       box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
     }
 
     body {
       margin: 0;
       padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background-color: var(--bg-color);
+      /* Tipografía limpia y moderna */
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-page);
       color: var(--text-main);
       display: flex;
       justify-content: center;
       min-height: 100vh;
+      align-items: center; /* Centrado vertical en desktop */
     }
 
-    /* Contenedor principal centrado, sin layout alternativo */
+    /* Contenedor principal: estilo tarjeta boutique */
     .card-container {
       width: 100%;
-      max-width: 390px;
-      background-color: var(--card-bg);
-      min-height: 100vh;
+      max-width: 400px; /* Ancho máximo ideal de lectura */
+      background-color: var(--bg-card);
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 40px 24px;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    }
-
-    /* 1. Identidad */
-    .avatar {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      background-color: #e5e7eb;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 40px;
-      font-weight: 600;
-      color: #9ca3af;
-      margin-bottom: 24px;
+      padding: 48px 32px 32px 32px;
+      margin: 40px 0;
+      border-radius: var(--radius-card);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08); /* Sombra elegante, no agresiva */
+      position: relative;
       overflow: hidden;
     }
 
+    /* Adaptación Mobile-First Real */
+    @media (max-width: 480px) {
+      body {
+        align-items: flex-start;
+        background-color: var(--bg-card);
+      }
+      .card-container {
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+        min-height: 100vh;
+        padding: 40px 24px 24px 24px;
+      }
+    }
+
+    /* 1. Identidad */
+    .avatar-wrapper {
+      position: relative;
+      margin-bottom: 24px;
+    }
+
+    .avatar {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #f9fafb, #e5e7eb);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+      font-weight: 600;
+      color: #9ca3af;
+      border: 3px solid var(--bg-card);
+      box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    /* Halo sutil alrededor del avatar */
+    .avatar-wrapper::after {
+      content: '';
+      position: absolute;
+      top: -4px; right: -4px; bottom: -4px; left: -4px;
+      border-radius: 50%;
+      border: 1px solid var(--border-color);
+      z-index: -1;
+    }
+
     .name {
-      margin: 0 0 4px 0;
-      font-size: 24px;
-      font-weight: 700;
+      margin: 0 0 6px 0;
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: -0.02em; /* Toque editorial */
       text-align: center;
+      color: #111;
     }
 
     .role {
-      margin: 0 0 16px 0;
-      font-size: 16px;
-      font-weight: 400;
-      color: var(--text-muted);
+      margin: 0 0 20px 0;
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--accent); /* Uso estratégico del color de acento */
       text-align: center;
     }
 
     /* 2. Descripción */
     .description {
-      margin: 0 0 32px 0;
-      font-size: 15px;
-      line-height: 1.5;
+      margin: 0 0 36px 0;
+      font-size: 16px;
+      line-height: 1.6;
+      font-weight: 400;
       text-align: center;
+      color: var(--text-muted);
       max-width: 320px;
     }
 
@@ -99,7 +165,7 @@
       width: 100%;
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 14px;
       margin-bottom: 32px;
     }
 
@@ -107,54 +173,146 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      gap: 10px;
       width: 100%;
-      min-height: 44px; /* Área táctil mínima */
-      padding: 12px 16px;
-      background-color: var(--btn-bg);
-      color: var(--btn-text);
-      border: 1px solid var(--btn-border);
-      border-radius: 8px;
+      min-height: 52px; /* Área táctil premium */
+      padding: 14px 20px;
+      background-color: var(--bg-card);
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-btn);
       text-decoration: none;
-      font-size: 16px;
-      font-weight: 500;
+      font-size: 15px;
+      font-weight: 600;
       cursor: pointer;
-      transition: all 0.2s ease;
+      transition: all var(--transition-base);
     }
 
-    .btn:hover, .btn:focus {
+    /* Microinteracciones */
+    .btn:hover {
       background-color: #f9fafb;
-      outline: none;
       border-color: #d1d5db;
+      transform: translateY(-1px);
+    }
+    
+    .btn:active {
+      transform: scale(0.98);
     }
 
+    /* Jerarquía 1: CTA Principal */
     .btn-primary {
-      background-color: var(--primary);
-      color: white;
+      background-color: var(--text-main); /* Botón oscuro, muy premium */
+      color: #ffffff;
+      border: none;
+      box-shadow: 0 8px 16px -4px rgba(17, 24, 39, 0.2);
+    }
+
+    .btn-primary:hover {
+      background-color: #000000;
+      box-shadow: 0 10px 20px -4px rgba(17, 24, 39, 0.3);
+    }
+
+    .btn svg {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+    }
+
+    .divider {
+      width: 40px;
+      height: 2px;
+      background-color: var(--border-color);
+      margin: 0 auto 32px auto;
+      border-radius: 2px;
+    }
+
+    /* Bloque Secundario (Compartir) */
+    .btn-secondary {
+      background-color: var(--accent-light);
+      color: var(--accent);
       border: none;
     }
-
-    .btn-primary:hover, .btn-primary:focus {
-      background-color: #059669;
+    .btn-secondary:hover {
+      background-color: #d1fae5;
     }
 
-    hr {
+    /* QR Premium */
+    .qr-section {
+      background-color: #f8fafc;
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 24px;
+      text-align: center;
       width: 100%;
-      border: none;
-      border-top: 1px solid var(--btn-border);
-      margin: 0 0 24px 0;
+      margin-bottom: 24px;
+    }
+
+    .qr-section h3 {
+      font-size: 14px;
+      font-weight: 700;
+      margin: 0 0 6px 0;
+      color: var(--text-main);
+    }
+
+    .qr-section p {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin: 0 0 16px 0;
+    }
+
+    .qr-box {
+      background: #ffffff;
+      padding: 12px;
+      border-radius: 12px;
+      display: inline-block;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      border: 1px solid var(--border-color);
+    }
+
+    .qr-box img {
+      display: block;
+      width: 120px;
+      height: 120px;
+      /* En el producto real, este SRC se genera, aquí usamos una API segura de ej. */
     }
 
     /* 5. Pie */
     .footer {
       margin-top: auto;
-      padding-top: 24px;
+      padding-top: 16px;
       font-size: 13px;
-      color: var(--text-muted);
+      color: #9ca3af;
+      font-weight: 500;
     }
 
     .footer a {
-      color: var(--text-muted);
-      text-decoration: underline;
+      color: #9ca3af;
+      text-decoration: none;
+      transition: color var(--transition-base);
+    }
+    .footer a:hover {
+      color: var(--text-main);
+    }
+
+    /* Toast Notification (Feedback UI) */
+    .toast {
+      position: fixed;
+      bottom: -60px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: var(--text-main);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-size: 14px;
+      font-weight: 600;
+      box-shadow: 0 10px 25px -5px rgba(0,0,0,0.2);
+      transition: bottom 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      z-index: 1000;
+      pointer-events: none;
+    }
+    .toast.show {
+      bottom: 30px;
     }
   </style>
 </head>
@@ -163,53 +321,93 @@
   <div class="card-container">
     
     <!-- 1. Identidad -->
-    <!-- Si no hay foto, usar iniciales -->
-    <div class="avatar" aria-label="Iniciales de María Soto">MS</div>
+    <div class="avatar-wrapper">
+      <div class="avatar" aria-label="Iniciales de María Soto">MS</div>
+    </div>
     <h1 class="name">María Soto</h1>
-    <h2 class="role">Abogada especialista en derecho laboral</h2>
+    <h2 class="role">Abogada Laboral</h2> <!-- Texto más conciso para mejorar la jerarquía -->
 
     <!-- 2. Descripción -->
-    <p class="description">Ayudo a trabajadores a defender sus derechos laborales.</p>
+    <p class="description">Ayudo a trabajadores a defender sus derechos laborales con profesionalismo y dedicación exclusiva.</p>
 
-    <!-- 3. Acciones (Máximo 6 botones según la regla) -->
+    <!-- 3. Acciones Comerciales -->
     <div class="buttons-container">
-      <!-- WhatsApp siempre primero (codificado correctamente) -->
+      
+      <!-- CTA Principal: WhatsApp -->
       <a href="https://wa.me/56912345678?text=Hola%2C%20vi%20tu%20tarjeta..." class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-        WhatsApp
+        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.82 9.82 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.81 11.81 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.88 11.88 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.82 11.82 0 0 0-3.48-8.413Z"/></svg>
+        Escríbeme por WhatsApp
       </a>
       
-      <!-- Instagram -->
+      <!-- Secundaria 1: Instagram -->
       <a href="https://instagram.com/mariasoto" class="btn" target="_blank" rel="noopener noreferrer">
+        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
         Instagram
       </a>
       
-      <!-- Email -->
+      <!-- Secundaria 2: Email -->
       <a href="mailto:contacto@mariasoto.cl" class="btn">
-        Correo
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+        Enviar Correo
       </a>
     </div>
 
-    <hr>
+    <!-- Separador sutil -->
+    <div class="divider"></div>
 
-    <!-- 4. Compartir y Guardar Contacto -->
-    <div class="buttons-container">
-      <button class="btn" id="btn-share">Compartir esta tarjeta</button>
-      <button class="btn" id="btn-vcf">Guardar contacto</button>
+    <!-- 9. Sección QR Premium -->
+    <div class="qr-section">
+      <h3>Escanea para ver mi tarjeta</h3>
+      <p>Guarda mi contacto y compártelo fácilmente</p>
+      <div class="qr-box">
+        <!-- Generación de QR externa confiable para MVP (apuntando a URL canónica) -->
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&color=111827&bgcolor=ffffff&data=https://mariasoto.cl" alt="Código QR de la tarjeta de María Soto" width="120" height="120">
+      </div>
     </div>
 
-    <!-- 5. Pie -->
+    <!-- 4. y 8. Bloque Compartir y Guardar (Acciones de Tarjeta) -->
+    <div class="buttons-container" style="margin-bottom: 16px;">
+      
+      <!-- Botón Guardar (VCF) -->
+      <button class="btn btn-secondary" id="btn-vcf" aria-label="Descargar contacto">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
+        Guardar Contacto
+      </button>
+
+      <!-- Botón Compartir -->
+      <button class="btn" id="btn-share" aria-label="Compartir tarjeta">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+        Compartir esta tarjeta
+      </button>
+
+    </div>
+
+    <!-- 5. Pie de página -->
     <div class="footer">
       Hecho por <a href="https://digitalizalab.cl" target="_blank" rel="noopener noreferrer">Digitaliza Lab</a>
     </div>
 
   </div>
 
-  <!-- Scripts funcionales -->
+  <!-- Toast para feedback -->
+  <div id="toast" class="toast" aria-live="polite">Enlace copiado al portapapeles</div>
+
+  <!-- Lógica Minimalista -->
   <script>
-    // Web Share API con Fallback a copiar enlace
+    const toast = document.getElementById('toast');
+    
+    function showToast(message) {
+      toast.textContent = message;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3000);
+    }
+
+    // 8. Compartir: Web Share API con Fallback Visual Premium
     document.getElementById('btn-share').addEventListener('click', async () => {
       const shareData = {
-        title: 'María Soto — Abogada',
+        title: 'María Soto — Abogada Especialista',
         text: 'Ayudo a trabajadores a defender sus derechos laborales.',
         url: 'https://mariasoto.cl'
       };
@@ -218,21 +416,23 @@
         if (navigator.share) {
           await navigator.share(shareData);
         } else {
-          // Fallback a clipboard
           await navigator.clipboard.writeText(shareData.url);
-          alert('¡Enlace copiado al portapapeles!');
+          showToast('Enlace copiado');
         }
       } catch (err) {
-        console.error('Error al compartir:', err);
+        if (err.name !== 'AbortError') {
+          console.error('Error al compartir:', err);
+        }
       }
     });
 
-    // Generar y descargar VCF (Guardar Contacto)
+    // 10. Generar y descargar VCF (Guardar Contacto)
     document.getElementById('btn-vcf').addEventListener('click', () => {
+      // VCF Sanitizado y formateado correctamente
       const vcard = `BEGIN:VCARD
 VERSION:3.0
 FN:María Soto
-TITLE:Abogada especialista en derecho laboral
+TITLE:Abogada Laboral
 TEL;TYPE=WORK,VOICE:+56912345678
 EMAIL:contacto@mariasoto.cl
 URL:https://mariasoto.cl
@@ -247,6 +447,8 @@ END:VCARD`;
       a.click();
       document.body.removeChild(a);
       URL.revokeObjectURL(url);
+      
+      showToast('Contacto guardado');
     });
   </script>
 </body>
